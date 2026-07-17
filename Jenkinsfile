@@ -1,6 +1,13 @@
 pipeline{
     agent any
     stages{
+        stage('Clone')
+        {
+            steps{
+                git "https://github.com/prathap0223/react-app.git"
+
+            }
+        }
         stage('Build') {
             steps {
                 sh 'sudo docker build -t react-external .'
